@@ -94,9 +94,14 @@
 	            회원관리
 	          </a>
 	          <ul class="dropdown-menu">
-	            <li><a class="dropdown-item active" href="userLogin.jsp">로그인</a></li>
-	            <li><a class="dropdown-item" href="userJoin.jsp">회원가입</a></li>
+	          <%
+	          	if(userID == null) {
+	          %>
+	            <li><a class="dropdown-item" href="userLogin.jsp">로그인</a></li>
+	            <li><a class="dropdown-item active" href="userJoin.jsp">회원가입</a></li>
+            <% } else { %>
 	            <li><a class="dropdown-item" href="userLogoutAction.jsp">로그아웃</a></li>
+            <% } %>
 	          </ul>
 	        </li>
 	      </ul>
