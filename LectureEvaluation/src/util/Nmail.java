@@ -7,6 +7,6 @@ public class Nmail extends Authenticator {
 
 	@Override
 	protected PasswordAuthentication getPasswordAuthentication() {
-		return new PasswordAuthentication("alwkd920101@naver.com", "wkdal1234!!");
+		return new PasswordAuthentication("이메일", "비밀번호");
 	}
 }
