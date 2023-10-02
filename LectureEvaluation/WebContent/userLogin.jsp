@@ -60,8 +60,8 @@
 	  </div>
 	</nav>
 	
-	<section class="container mt-3" style="max-width: 560px;">
-		<h2 class="mb-3" style="text-align: center;">로그인</h2>
+	<section class="container mt-3" style="max-width: 400px;">
+		<h2 class="mb-3 mt-3" style="text-align: center;">로그인</h2>
 		<form action="./userLoginAction.jsp" method="post">
 			<div class="form-group">
 				<label>아이디</label>
@@ -71,12 +71,14 @@
 				<label>비밀번호</label>
 				<input type="password" name="userPwd" class="form-control mb-3">
 			</div>
-			<button type="submit" class="btn btn-primary">로그인</button>
+			<div class="my-btn">
+				<button type="submit" class="btn btn-primary w-100 mt-3">로그인</button>
+			</div>
 		</form>
 	</section>
 
 	<footer class="bg-dark mt-auto p-5 text-center" style="color: #FFFFFF;">
-		Copyright &copy; 2023 박장미 All Rights Reserved;
+		Copyright &copy; 2023 박장미 All Rights Reserved
 	</footer>
 
 <script></script>

@@ -334,7 +334,7 @@
 		</div>
 	</div>
 	<footer class="bg-dark mt-auto p-5 text-center" style="color: #FFFFFF;">
-		Copyright &copy; 2023 박장미 All Rights Reserved;
+		Copyright &copy; 2023 박장미 All Rights Reserved
 	</footer>
 
 <script></script>
