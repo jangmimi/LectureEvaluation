@@ -22,6 +22,7 @@
 	String searchType = "최신순";
 	String search = "";
 	int pageNumber = 0;
+
 	if(request.getParameter("lectureDivide") != null) {
 		lectureDivide = request.getParameter("lectureDivide");
 	}
@@ -100,13 +101,13 @@
 			<div style="display: flex;">
 				<select name="lectureDivide" class="form-select mx-1 mt-2" style="width: 100px;">
 					<option value="전체">전체</option>
-					<option value="전공"><% if(lectureDivide.equals("전공")) out.println("selected"); %>전공</option>
-					<option value="교양"><% if(lectureDivide.equals("교양")) out.println("selected"); %>교양</option>
-					<option value="기타"><% if(lectureDivide.equals("기타")) out.println("selected"); %>기타</option>
+					<option value="전공" <% if(lectureDivide.equals("전공")) out.println("selected"); %>>전공</option>
+					<option value="교양" <% if(lectureDivide.equals("교양")) out.println("selected"); %>>교양</option>
+					<option value="기타" <% if(lectureDivide.equals("기타")) out.println("selected"); %>>기타</option>
 				</select>
 				<select name="searchType" class="form-select mx-1 mt-2" style="width: 100px;">
 					<option value="최신순">최신순</option>
-					<option value="추천순"><% if(searchType.equals("추천순")) out.println("selected"); %>추천순</option>
+					<option value="추천순" <% if(searchType.equals("추천순")) out.println("selected"); %>>추천순</option>
 				</select>
 				<input type="text" name="search" class="form-control mx-1 mt-2" placeholder="내용을 입력하세요.">
 				<button type="submit" class="btn btn-primary mx-1 mt-2" style="width: 90px;">검색</button>
@@ -117,7 +118,7 @@
 <%
 	ArrayList<EvaluationDTO> evaluationList = new ArrayList<>();
 	evaluationList = new EvaluationDAO().getList(lectureDivide, searchType, search, pageNumber);
-	if(evaluationList != null) {
+	if(evaluationList != null) 
 		for(int i=0; i<evaluationList.size(); i++) {
 			if(i == 5) break;	// 5개까지만 출력
 			EvaluationDTO evaluation = evaluationList.get(i);
@@ -144,8 +145,8 @@
 						<span style="color: green;">(추천 : <%= evaluation.getLikeCount() %>)</span>
 					</div>
 					<div class="col-3 text-right">
-					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=">추천</a>
-					<a onclick="return confirm('삭제하시겠습니까?')" href="./likeAction.jsp?evaluationID=">삭제</a>
+					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=<%= evaluation.getEvaluationID() %>"">추천</a>
+					<a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=<%= String.valueOf(evaluation.getEvaluationID()) %>">삭제</a>
 					</div>
 				</div>
 			</div>

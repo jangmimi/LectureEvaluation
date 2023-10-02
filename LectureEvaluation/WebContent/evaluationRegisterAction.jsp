@@ -24,7 +24,7 @@
 	String professorName = null;
 	int lectureYear = 0;
 	String semesterDivide = null;
-	String lectureDivde = null;
+	String lectureDivide = null;
 	String evaluationTitle = null;
 	String evaluationContent = null;
 	String totalScore = null;
@@ -48,8 +48,8 @@
 	if(request.getParameter("semesterDivide") != null) {
 		semesterDivide = request.getParameter("semesterDivide");
 	}	
-	if(request.getParameter("lectureDivde") != null) {
-		lectureDivde = request.getParameter("lectureDivde");
+	if(request.getParameter("lectureDivide") != null) {
+		lectureDivide = request.getParameter("lectureDivide");
 	}	
 	if(request.getParameter("evaluationTitle") != null) {
 		evaluationTitle = request.getParameter("evaluationTitle");
@@ -71,7 +71,7 @@
 	}	
 	
 	if(lectureName == null || professorName == null || lectureYear == 0 || semesterDivide == null 
-			|| lectureDivde == null || evaluationTitle == null || evaluationContent == null
+			|| lectureDivide == null || evaluationTitle == null || evaluationContent == null
 			|| totalScore == null || creditScore == null || comportableScore == null || lectureScore == null
 			|| evaluationTitle.equals("") || evaluationContent.equals("")) {
 		PrintWriter script = response.getWriter();
@@ -83,7 +83,7 @@
 	}
 	EvaluationDAO evaluationDAO = new EvaluationDAO();
 	int result = evaluationDAO.write(new EvaluationDTO(0, userID, lectureName, professorName,
-			lectureYear, semesterDivide, lectureDivde, evaluationTitle, evaluationContent,
+			lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent,
 			totalScore, creditScore, comportableScore, lectureScore, 0));
 	if(result == -1) {
 		PrintWriter script = response.getWriter();
